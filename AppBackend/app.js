@@ -63,40 +63,6 @@ app.post("/getGames", function(req, res) {
     onNext: function(record) {
       var element = record.get("videogame").properties;
 
-      if (element.platform == "PS") {
-        element.color = "#cab9b6";
-      } else if (element.platform == "PS2") {
-        element.color = "#b3a3a0";
-      } else if (element.platform == "PS3") {
-        element.color = "#8b8382";
-      } else if (element.platform == "PS4") {
-        element.color = "#736d6d";
-      } else if (element.platform == "PSP") {
-        element.color = "#afa9a9";
-      } else if (element.platform == "GB") {
-        element.color = "#6c6d9b";
-      } else if (element.platform == "GBA") {
-        element.color = "#8586b8";
-      } else if (element.platform == "SNES") {
-        element.color = "#cccce5";
-      } else if (element.platform == "N64") {
-        element.color = "#afafaf";
-      } else if (element.platform == "Wii") {
-        element.color = "#d9eeea";
-      } else if (element.platform == "DS") {
-        element.color = "#d5d5d5";
-      } else if (element.platform == "3DS") {
-        element.color = "#9af4ed";
-      } else if (element.platform == "WiiU") {
-        element.color = "#539993";
-      } else if (element.platform == "X360") {
-        element.color = "#9eff86";
-      } else if (element.platform == "XOne") {
-        element.color = "#5ba24c";
-      } else {
-        element.color = "#b196b7";
-      }
-
       if (element.year == undefined) {
         element.year = { low: "--" };
         result.push(element);
