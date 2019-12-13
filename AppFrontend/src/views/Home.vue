@@ -66,20 +66,14 @@
         <v-toolbar height="100px" color="grey darken-4" dark>
           <v-toolbar-title>
             Búsqueda por nombre:
-            <v-tooltip bottom>
-              <template v-slot:activator="{ on }">
-                <v-text-field
-                  clearable
-                  rounded
-                  outlined
-                  dense
-                  label="Search"
-                  v-model="busqueda"
-                  v-on="on"
-                ></v-text-field>
-              </template>
-              <span>¡Ten en cuenta las mayúsculas!</span>
-            </v-tooltip>
+            <v-text-field
+              rounded
+              outlined
+              dense
+              label="Search"
+              v-model="busqueda"
+              v-on:keyup.enter="send()"
+            ></v-text-field>
           </v-toolbar-title>
           <v-spacer></v-spacer>
           <v-checkbox label="Más modernos primero" v-model="modern"></v-checkbox>

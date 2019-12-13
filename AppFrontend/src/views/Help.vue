@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background: grey">
+  <v-app style="background: white">
     <v-card color="indigo lighten-2" height="60px">
       <v-toolbar dark height="60px" color="black">
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
@@ -19,6 +19,7 @@
       </v-toolbar>
     </v-card>
 
+    <v-container justify="center" align="center">Henlo</v-container>
     <v-navigation-drawer temporary absolute v-model="drawer" class="grey darken-4" dark>
       <v-list-item>
         <v-list-item-avatar>
