@@ -38,9 +38,9 @@ app.post("/getGames", function(req, res) {
   }
 
   if (search != "" && platform != "Cualquiera") {
-    query = query.concat(" AND (v.name CONTAINS '" + search + "') ");
+    query = query.concat(" AND (v.name =~ '(?i).*" + search + ".*') ");
   } else if (search != "") {
-    query = query.concat("WHERE (v.name CONTAINS '" + search + "') ");
+    query = query.concat(" WHERE (v.name =~ '(?i).*" + search + ".*') ");
   }
 
   if (modern) {
