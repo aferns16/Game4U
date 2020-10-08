@@ -5,11 +5,10 @@ const port = 3000;
 var cors = require("cors");
 const neo4j = require("neo4j-driver").v1;
 const driver = neo4j.driver(
-  "bolt://localhost",
+  "bolt://localhost:7687",
   neo4j.auth.basic("neo4j", "1236")
 );
 const session = driver.session();
-
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -73,7 +72,7 @@ app.post("/getGames", function(req, res) {
     onCompleted: function() {
       if (result.length < 1) result = [{ message: "Error" }];
       res.send(result);
-      session.close();
+      // session.close();
     },
     onError: function(error) {
       console.log(error);
